@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>刘培宇 | 个人主页</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Decorative background elements -->
+<div class="bg-grid"></div>
+<div class="bg-orb bg-orb--1"></div>
+<div class="bg-orb bg-orb--2"></div>
+<div class="bg-orb bg-orb--3"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#" class="nav__brand" data-i18n="brand">刘培宇</a>
+    <div class="nav__links">
+      <a href="#academics" class="nav__link" data-i18n="navAcademics">学术</a>
+      <a href="#research" class="nav__link" data-i18n="navResearch">论文</a>
+      <a href="#english" class="nav__link" data-i18n="navEnglish">英语</a>
+      <a href="#awards" class="nav__link" data-i18n="navAwards">竞赛</a>
+      <a href="#internship" class="nav__link" data-i18n="navInternship">实习</a>
+      <a href="#photography" class="nav__link" data-i18n="navHobbies">爱好</a>
+      <a href="#contact" class="nav__link" data-i18n="navContact">联系</a>
+    </div>
+    <div class="nav__right">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-toggle__zh">EN</span>
+        <span class="lang-toggle__dot">·</span>
+        <span class="lang-toggle__en">中文</span>
+      </button>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero__frame">
+    <div class="hero__avatar">
+      <img src="assets/avatar.jpg" alt="刘培宇" class="hero__avatar-img">
+    </div>
+  </div>
+  <h1 class="hero__name">刘培宇 <span style="font-family: Georgia, serif; font-size: 0.5em; font-weight: 400; color: var(--text-secondary); display: block; margin-top: 2px;">Kyler Liu</span></h1>
+  <p class="hero__subtitle" data-i18n="heroSubtitle">广州大学 · 统计学</p>
+  <p class="hero__tagline" data-i18n="heroTagline">用数据理解世界，用镜头记录生活</p>
+  <div class="hero__badges">
+    <span class="hero__badge">GPA 3.91</span>
+    <span class="hero__badge">Rank 2/72</span>
+    <span class="hero__badge">IELTS 7.0</span>
+  </div>
+  <div class="hero__scroll">
+    <div class="hero__scroll-icon"></div>
+  </div>
+</section>
+
+<!-- Academics -->
+<section class="section" id="academics">
+  <div class="section__header">
+    <h2 class="section__title" data-i18n="academicsTitle">学术成绩</h2>
+    <p class="section__desc" data-i18n="academicsDesc">学业概览</p>
+  </div>
+  <div class="grid">
+    <article class="card card--courses">
+      <div class="card__icon">📚</div>
+      <h3 class="card__title" data-i18n="coursesTitle">核心课程</h3>
+      <ul class="card__course-list">
+        <li><span class="card__course-name" data-i18n="course1">概率论与数理统计</span><span class="card__course-score">97</span></li>
+        <li><span class="card__course-name" data-i18n="course2">多元统计分析</span><span class="card__course-score">95</span></li>
+        <li><span class="card__course-name" data-i18n="course3">回归分析</span><span class="card__course-score">95</span></li>
+        <li><span class="card__course-name" data-i18n="course4">运筹学</span><span class="card__course-score">95</span></li>
+        <li><span class="card__course-name" data-i18n="course5">数据挖掘</span><span class="card__course-score">90</span></li>
+      </ul>
+    </article>
+
+    <article class="card card--academics">
+      <div class="card__icon">📊</div>
+      <h3 class="card__title" data-i18n="academicsCardTitle">成绩与排名</h3>
+      <div class="card__stat">
+        <span class="card__stat-number">3.91</span>
+        <span class="card__stat-label">/ 4.0 GPA</span>
+      </div>
+      <div class="card__stat">
+        <span class="card__stat-number">92.33</span>
+        <span class="card__stat-label" data-i18n="avgScore">均分</span>
+      </div>
+      <div class="card__stat">
+        <span class="card__stat-number">2 / 72</span>
+        <span class="card__stat-label" data-i18n="ranking">专业排名 (2.77%)</span>
+      </div>
+    </article>
+
+    <article class="card card--skills">
+      <div class="card__icon">🛠</div>
+      <h3 class="card__title" data-i18n="skillsTitle">专业技能</h3>
+      <div class="card__skill-group">
+        <span class="card__skill-label" data-i18n="skillGroup1">编程与分析工具</span>
+        <div class="card__skills-list">
+          <span class="card__skill-tag">Python</span>
+          <span class="card__skill-tag">R</span>
+          <span class="card__skill-tag">MATLAB</span>
+          <span class="card__skill-tag">Claude Code</span>
+        </div>
+      </div>
+      <div class="card__skill-group">
+        <span class="card__skill-label" data-i18n="skillGroup2">统计建模软件</span>
+        <div class="card__skills-list">
+          <span class="card__skill-tag">SPSS</span>
+          <span class="card__skill-tag">Amos</span>
+        </div>
+      </div>
+      <div class="card__skill-group">
+        <span class="card__skill-label" data-i18n="skillGroup3">基础证书</span>
+        <div class="card__skills-list">
+          <span class="card__skill-tag" data-i18n="skillCert">计算机二级</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Research -->
+<section class="section" id="research">
+  <div class="section__header">
+    <h2 class="section__title" data-i18n="researchTitle">科研论文</h2>
+    <p class="section__desc" data-i18n="researchDesc">学术探索的足迹</p>
+  </div>
+  <div class="grid grid--research">
+    <article class="card card--research card--wide">
+      <div class="card__badge" data-i18n="firstAuthor">第一作者</div>
+      <div class="card__icon">📄</div>
+      <h3 class="card__title" data-i18n="paperTitle">基于自适应权重的MIDAS-GARCH模型</h3>
+      <p class="card__journal" data-i18n="paperJournal">《应用统计与数据科学》</p>
+      <p class="card__meta" data-i18n="paperDate">2025.10 – 2026.02</p>
+      <p class="card__desc" data-i18n="paperDesc">
+        针对传统MIDAS-GARCH模型中固定权重函数难以有效捕捉高频数据微观结构噪声与时变特征的局限，提出自适应权重优化的MIDAS-GARCH模型。通过引入基于高频数据交易特征与波动动态调整权重的函数，实现高频信息的高效融合。理论层面论证了模型参数估计量的一致性与渐近正态性，模拟与实证研究验证了模型的高估计精度与稳健性。
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- English -->
+<section class="section" id="english">
+  <div class="section__header">
+    <h2 class="section__title" data-i18n="englishTitle">英语能力</h2>
+  </div>
+  <div class="grid grid--english">
+    <article class="card card--english card--wide">
+      <div class="card__scores">
+        <div class="card__score">
+          <span class="card__score-num">7.0</span>
+          <span class="card__score-label">IELTS</span>
+        </div>
+        <div class="card__score">
+          <span class="card__score-num">551</span>
+          <span class="card__score-label">CET-6</span>
+        </div>
+        <div class="card__score">
+          <span class="card__score-num">583</span>
+          <span class="card__score-label">CET-4</span>
+        </div>
+        <div class="card__score">
+          <span class="card__score-num" data-i18n="gbLevel">中级</span>
+          <span class="card__score-label" data-i18n="gbLabel">国才</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Awards -->
+<section class="section" id="awards">
+  <div class="section__header">
+    <h2 class="section__title" data-i18n="awardsTitle">竞赛与荣誉</h2>
+    <p class="section__desc" data-i18n="awardsDesc">挑战中成长</p>
+  </div>
+
+  <!-- 国家级 -->
+  <h3 class="section__subtitle" data-i18n="nationalLevel">国家级</h3>
+  <div class="grid">
+    <article class="card card--award">
+      <span class="card__award-icon">🥇</span>
+      <h3 class="card__award-name" data-i18n="award2Name">全国大学生英语竞赛</h3>
+      <p class="card__award-level" data-i18n="award2Level">全国特等奖（top 1‰）</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🥉</span>
+      <h3 class="card__award-name" data-i18n="award1Name">全国大学生市场调查与分析大赛</h3>
+      <p class="card__award-level" data-i18n="award1Level">全国三等奖 · 项目负责人</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🏅</span>
+      <h3 class="card__award-name" data-i18n="award5Name">美国大学生数学建模竞赛</h3>
+      <p class="card__award-level" data-i18n="award5Level">S奖 · 核心成员</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🥇</span>
+      <h3 class="card__award-name" data-i18n="award3Name">第三届全国大学生新媒体大赛</h3>
+      <p class="card__award-level" data-i18n="award3Level">全国一等奖 · 摄影组</p>
+    </article>
+  </div>
+
+  <!-- 省市级 -->
+  <h3 class="section__subtitle" data-i18n="provincialLevel">省市级</h3>
+  <div class="grid">
+    <article class="card card--award">
+      <span class="card__award-icon">🥇</span>
+      <h3 class="card__award-name" data-i18n="award9Name">"正大杯"市场调查大赛</h3>
+      <p class="card__award-level" data-i18n="award9Level">广东省一等奖</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🥉</span>
+      <h3 class="card__award-name" data-i18n="award4Name">挑战杯创业计划竞赛</h3>
+      <p class="card__award-level" data-i18n="award4Level">广东省铜奖</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🥉</span>
+      <h3 class="card__award-name" data-i18n="award7Name">"羊城之夏"照片征集活动</h3>
+      <p class="card__award-level" data-i18n="award7Level">少儿组三等奖</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🥈</span>
+      <h3 class="card__award-name" data-i18n="award8Name">广州市中小学师生书画及手工艺作品比赛</h3>
+      <p class="card__award-level" data-i18n="award8Level">摄影类二等奖 + 三等奖</p>
+    </article>
+  </div>
+
+  <!-- 校级 -->
+  <h3 class="section__subtitle" data-i18n="schoolLevel">校级</h3>
+  <div class="grid">
+    <article class="card card--award">
+      <span class="card__award-icon">🥈</span>
+      <h3 class="card__award-name" data-i18n="award6Name">校二等奖学金</h3>
+      <p class="card__award-level" data-i18n="award6Level">专业前8%</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🎖</span>
+      <h3 class="card__award-name" data-i18n="honor2">优秀共青团员</h3>
+      <p class="card__award-level" data-i18n="honor2Desc">校级荣誉</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🎖</span>
+      <h3 class="card__award-name" data-i18n="honor4">优秀学生</h3>
+      <p class="card__award-level" data-i18n="honor4Desc">广州市玉岩中学</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🎖</span>
+      <h3 class="card__award-name" data-i18n="honor5">优秀志愿者</h3>
+      <p class="card__award-level" data-i18n="honor5Desc">广州市玉岩中学</p>
+    </article>
+  </div>
+
+  <!-- 其他 -->
+  <h3 class="section__subtitle" data-i18n="otherLevel">其他</h3>
+  <div class="grid">
+    <article class="card card--award">
+      <span class="card__award-icon">🎖</span>
+      <h3 class="card__award-name" data-i18n="honor1">入党发展对象</h3>
+      <p class="card__award-level" data-i18n="honor1Desc">政治面貌</p>
+    </article>
+    <article class="card card--award">
+      <span class="card__award-icon">🎖</span>
+      <h3 class="card__award-name" data-i18n="honor3">志愿服务 334h</h3>
+      <p class="card__award-level" data-i18n="honor3Desc">社会服务</p>
+    </article>
+  </div>
+</section>
+
+<!-- Internship -->
+<section class="section" id="internship">
+  <div class="section__header">
+    <h2 class="section__title" data-i18n="internshipTitle">实习与实践</h2>
+    <p class="section__desc" data-i18n="internshipDesc">真实业务数据的打磨</p>
+  </div>
+  <div class="grid grid--internship">
+    <article class="card card--internship card--wide">
+      <div class="card__badge" data-i18n="internshipBadge">数据科学实习</div>
+      <div class="card__icon">🏢</div>
+      <h3 class="card__title" data-i18n="internshipCompany">上海科泰电源股份有限公司</h3>
+      <p class="card__journal" data-i18n="internshipRole">数据科学实习生 · 2024.01 – 2024.02</p>
+      <ul class="card__internship-list">
+        <li data-i18n="internshipItem1">运用 Excel 高阶函数与数据透视表，重构并优化核心业务的比价自动化模型，通过对多维度供应商报价及历史采购数据进行清洗与对比分析，为总监输出直观的数据看板，有效助力业务降本增效</li>
+        <li data-i18n="internshipItem2">熟练运用金蝶云星空 ERP 系统，深度参与进口贸易及报关环节的端到端数据管理，负责关键单据的精准录入、多维度数据核对与全链路状态追踪</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- Photography & Interests -->
+<section class="section section--photo" id="photography">
+  <div class="section__header">
+    <h2 class="section__title" data-i18n="photoSectionTitle">爱好</h2>
+  </div>
+  <div class="photo-showcase">
+    <div class="photo-showcase__main">
+      <article class="card card--photo-main">
+        <h2 class="card__photo-title" data-i18n="photoTitle">光影之间</h2>
+        <p class="card__photo-subtitle" data-i18n="photoDesc">用镜头丈量时间的厚度</p>
+        <div class="photo-main__body">
+          <div class="photo-main__stat">
+            <span class="photo-main__num">12</span>
+            <span class="photo-main__unit" data-i18n="photoUnit">年</span>
+            <span class="photo-main__label" data-i18n="photoYears">摄影之路</span>
+            <span class="photo-main__member" data-i18n="photoMember">广东省青年摄影师协会 · 会员</span>
+          </div>
+          <div class="card__photo-timeline">
+            <div class="timeline__item">
+              <span class="timeline__year" data-i18n="timeline1Year">2013</span>
+              <span class="timeline__text" data-i18n="timeline1Text">拿起相机，从此爱上光影</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__year" data-i18n="timeline2Year">2017</span>
+              <span class="timeline__text" data-i18n="timeline2Text">羊城之夏摄影比赛 · 三等奖（《建筑艺术》）</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__year" data-i18n="timeline3Year">2018</span>
+              <span class="timeline__text" data-i18n="timeline3Text">广大附中 · 摄影部部长</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__year" data-i18n="timeline4Year">2021</span>
+              <span class="timeline__text" data-i18n="timeline4Text">广州市玉岩中学M4摄影协会 · 社长</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__year" data-i18n="timeline5Year">2024</span>
+              <span class="timeline__text" data-i18n="timeline5Text">校新媒体优秀部委 · 新媒体大赛一等奖</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__year" data-i18n="timeline6Year">至今</span>
+              <span class="timeline__text" data-i18n="timeline6Text">用镜头继续记录世界</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="photo-showcase__side">
+      <article class="card card--sports">
+        <h3 class="card__title" data-i18n="sportsTitle">运动</h3>
+        <div class="card__sports-item">
+          <span class="card__sports-icon">⚽</span>
+          <div>
+            <p class="card__sports-name" data-i18n="football">足球</p>
+            <p class="card__sports-desc" data-i18n="footballDesc">小学 · 初中校队</p>
+          </div>
+        </div>
+        <div class="card__sports-item">
+          <span class="card__sports-icon">🏸</span>
+          <div>
+            <p class="card__sports-name">羽毛球</p>
+            <p class="card__sports-desc" data-i18n="badmintonDesc">业余爱好</p>
+          </div>
+        </div>
+      </article>
+      <article class="card card--social">
+        <h3 class="card__title" data-i18n="socialTitle">内容创作</h3>
+        <div class="card__sports-item">
+          <span class="card__sports-icon">🎬</span>
+          <div>
+            <p class="card__sports-name" data-i18n="socialPlatform">抖音</p>
+            <p class="card__sports-desc" data-i18n="socialDesc">内容创作者 · 1300 粉丝</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<footer class="footer" id="contact">
+  <div class="footer__inner">
+    <div class="footer__info">
+      <h3 class="footer__name">刘培宇</h3>
+      <p class="footer__school" data-i18n="footerSchool">广州大学 · 统计学 · 2023–至今</p>
+    </div>
+    <div class="footer__links">
+      <a href="mailto:gzhu_liupeiyu@163.com" class="footer__link">
+        <span class="footer__link-icon">✉</span>
+        gzhu_liupeiyu@163.com
+      </a>
+      <a href="mailto:k1ssuh2rd@gmail.com" class="footer__link">
+        <span class="footer__link-icon">✉</span>
+        k1ssuh2rd@gmail.com
+      </a>
+      <a href="tel:19540005423" class="footer__link">
+        <span class="footer__link-icon">📞</span>
+        19540005423
+      </a>
+    </div>
+    <p class="footer__copyright" data-i18n="copyright">© 2026 刘培宇 · 用数据理解世界，用镜头记录生活</p>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

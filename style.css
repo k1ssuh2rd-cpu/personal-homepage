@@ -1,0 +1,1085 @@
+/* ============================================
+   Liu Peiyu | Personal Homepage
+   Photography Gallery Aesthetic
+   ============================================ */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #F5F6F8;
+  color: #2C2C2C;
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* --- CSS Variables --- */
+:root {
+  --accent: rgb(203, 224, 241);
+  --accent-light: rgba(203, 224, 241, 0.3);
+  --accent-dark: #8BB8D3;
+  --card-bg: rgba(255, 255, 255, 0.72);
+  --card-border: rgba(255, 255, 255, 0.35);
+  --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.08);
+  --text-primary: #2C2C2C;
+  --text-secondary: #6B7280;
+  --text-light: #9CA3AF;
+  --radius: 16px;
+  --max-width: 1200px;
+  --nav-height: 64px;
+}
+
+/* --- Background Decor --- */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(203, 224, 241, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(203, 224, 241, 0.12) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  opacity: 0.35;
+}
+
+.bg-orb--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgb(203, 224, 241), transparent);
+  top: -150px;
+  right: -100px;
+}
+
+.bg-orb--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(203, 224, 241, 0.6), transparent);
+  bottom: 10%;
+  left: -120px;
+}
+
+.bg-orb--3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(203, 224, 241, 0.4), transparent);
+  bottom: -80px;
+  right: 20%;
+}
+
+/* --- Navigation --- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(245, 246, 248, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__brand {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav__links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-dark);
+  transition: width 0.3s ease;
+}
+
+.nav__link:hover {
+  color: var(--text-primary);
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+}
+
+.lang-toggle__dot {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px 60px;
+  text-align: center;
+}
+
+.hero__frame {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent), rgba(255,255,255,0.5));
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 1s 0.2s ease forwards;
+}
+
+.hero__avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.hero__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__name {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  animation: fadeUp 1s 0.4s ease forwards;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  margin-top: 4px;
+  opacity: 0;
+  animation: fadeUp 1s 0.5s ease forwards;
+}
+
+.hero__tagline {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--accent-dark);
+  margin-top: 12px;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  animation: fadeUp 1s 0.6s ease forwards;
+}
+
+.hero__badges {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp 1s 0.7s ease forwards;
+}
+
+.hero__badge {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fadeUp 1s 1s ease forwards;
+}
+
+.hero__scroll-icon {
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--text-light);
+  border-radius: 12px;
+  position: relative;
+}
+
+.hero__scroll-icon::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background: var(--accent-dark);
+  border-radius: 2px;
+  animation: scrollDot 2s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  50% { transform: translateX(-50%) translateY(10px); opacity: 0.3; }
+}
+
+/* --- Sections --- */
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.section--photo {
+  max-width: 100%;
+  padding: 48px 24px;
+}
+
+.section__header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section__title {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.section__desc {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.section__subtitle {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 36px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  letter-spacing: 0.02em;
+}
+
+/* --- Grid Layout --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid--research {
+  grid-template-columns: 1fr;
+}
+
+.grid--english {
+  grid-template-columns: 1fr;
+}
+
+/* --- Cards (Glassmorphism) --- */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.card.visible:hover {
+  transform: translateY(-4px);
+}
+
+.card--wide {
+  grid-column: 1 / -1;
+}
+
+.card__icon {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.card__title {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+/* --- Academics Card --- */
+.card--academics {
+  text-align: center;
+}
+
+.card__stat {
+  margin-bottom: 12px;
+}
+
+.card__stat:last-child {
+  margin-bottom: 0;
+}
+
+.card__stat-number {
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.card__stat-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* --- Courses Card --- */
+.card__course-list {
+  list-style: none;
+}
+
+.card__course-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.card__course-list li:last-child {
+  border-bottom: none;
+}
+
+.card__course-name {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.card__course-score {
+  font-weight: 600;
+  color: var(--accent-dark);
+  font-size: 0.95rem;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Skills Card --- */
+.card__skill-group {
+  margin-top: 10px;
+}
+
+.card__skill-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.card__skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card__skill-tag {
+  background: var(--accent-light);
+  color: #4A6F8F;
+  padding: 4px 14px;
+  border-radius: 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.card__skill-tag:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+/* --- Research Card --- */
+.card--research {
+  position: relative;
+}
+
+.card__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  letter-spacing: 0.03em;
+}
+
+.card__journal {
+  font-size: 0.9rem;
+  color: var(--accent-dark);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.card__meta {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+.card__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* --- Awards Card --- */
+.card--award {
+  text-align: center;
+  padding: 20px 16px;
+}
+
+.card__award-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.card__award-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+
+.card__award-level {
+  font-size: 0.8rem;
+  color: var(--accent-dark);
+  font-weight: 500;
+}
+
+/* --- English Card --- */
+.card--english {
+  text-align: center;
+  padding: 24px;
+}
+
+.card__scores {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.card__score {
+  text-align: center;
+}
+
+.card__score-num {
+  display: block;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.card__score-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card__score--highlight .card__score-num {
+  font-size: 2.4rem;
+  color: var(--accent-dark);
+  position: relative;
+}
+
+.card__score--highlight .card__score-label {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+/* --- Internship Card --- */
+.card--internship {
+  background: linear-gradient(
+    135deg,
+    rgba(203, 224, 241, 0.18),
+    rgba(255, 255, 255, 0.72)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card__internship-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__internship-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.card__internship-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+}
+
+/* --- Photography Section --- */
+.section--photo {
+  background: linear-gradient(180deg, transparent, rgba(203, 224, 241, 0.08));
+}
+
+.photo-showcase {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
+}
+
+.card--photo-main {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.6)
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(203, 224, 241, 0.3);
+  padding: 32px 28px;
+}
+
+.card__photo-title {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.card__photo-subtitle {
+  font-size: 1rem;
+  color: var(--text-light);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.photo-main__body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.photo-main__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-right: 36px;
+  border-right: 1px solid rgba(203, 224, 241, 0.35);
+}
+
+.photo-main__num {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(203, 224, 241, 0.35), rgba(255, 255, 255, 0.5));
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-dark);
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 4px 20px rgba(203, 224, 241, 0.25);
+}
+
+.photo-main__unit {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.photo-main__label {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 6px;
+}
+
+.photo-main__member {
+  color: var(--accent-dark);
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.card__photo-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timeline__item {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-dark);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--accent-dark);
+}
+
+.timeline__year {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.timeline__text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* --- Sports & Honors Side Cards --- */
+.photo-showcase__side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card--sports {
+  flex: 1;
+}
+
+.card--social {
+  flex: 1;
+}
+
+.card__sports-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card__sports-item:last-child {
+  margin-bottom: 0;
+}
+
+.card__sports-icon {
+  font-size: 1.6rem;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.card__sports-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.card__sports-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.card--honors {
+  flex: 1;
+}
+
+.card__honors-list {
+  list-style: none;
+}
+
+.card__honors-list li {
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 16px;
+}
+
+.card__honors-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent-dark);
+}
+
+/* --- Footer --- */
+.footer {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(203, 224, 241, 0.2);
+  padding: 32px 24px;
+  margin-top: 24px;
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.footer__name {
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.footer__school {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.footer__links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: var(--accent-dark);
+}
+
+.footer__link-icon {
+  font-size: 1rem;
+}
+
+.footer__copyright {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* --- Animations --- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile nav open state */
+.nav--open .nav__links {
+  display: flex;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--research,
+  .grid--english {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: rgba(245, 246, 248, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 85vh;
+    padding: 80px 20px 40px;
+  }
+
+  .hero__frame {
+    width: 130px;
+    height: 130px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .section {
+    padding: 36px 16px;
+  }
+
+  .section__header {
+    margin-bottom: 32px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card--photo-main {
+    padding: 28px 20px;
+  }
+
+  .photo-main__body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .photo-main__stat {
+    padding-right: 0;
+    padding-bottom: 24px;
+    border-right: none;
+    border-bottom: 1px solid rgba(203, 224, 241, 0.35);
+  }
+
+  .photo-main__num {
+    width: 88px;
+    height: 88px;
+    font-size: 2.2rem;
+  }
+
+  .card__scores {
+    gap: 20px;
+  }
+
+  .card__score-num {
+    font-size: 1.8rem;
+  }
+
+  .timeline__item {
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 16px;
+  }
+
+  .timeline__year {
+    min-width: auto;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__inner {
+    padding: 0 16px;
+  }
+
+  .hero__badges {
+    gap: 8px;
+  }
+
+  .hero__badge {
+    font-size: 0.78rem;
+    padding: 4px 12px;
+  }
+}
